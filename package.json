@@ -1,13 +1,13 @@
-﻿{
-  "name": "devbox-sql",
-  "version": "1.2.4",
-  "description": "Gerenciar conexão com banco de bados sql",
+{
+  "name": "smn-sql",
+  "version": "1.0.0",
+  "description": "Gerenciador de conexão com o banco SQL utilizando mssql.",
   "main": "mssql.js",
   "keywords": [
     "sql"
   ],
-  "author": "Gustavo Maritan <gustavomaritan@gmail.com>",
-  "license": "ISC",
+  "author": "Gustavo Maritan <gustavo@smn.com.br>",
+  "license": "MIT",
   "dependencies": {
     "mssql": "3.0.0"
   }
