@@ -1,6 +1,6 @@
 {
   "name": "smn-sql",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gerenciador de conexão com o banco SQL utilizando mssql.",
   "main": "mssql.js",
   "keywords": [
