@@ -5,4 +5,5 @@ examples
 *.sock
 *.pid
 *.log
-node_modules
+node_modules/
+old/

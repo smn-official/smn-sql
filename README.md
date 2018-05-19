@@ -2,47 +2,43 @@
 
 Gerenciador de conexão com o banco SQL utilizando mssql.
 
-- const sql = require('devbox-box')('Objeto configurações de conexão com banco');
+```js
+const sql = require('smn-sql')({ /*configuração*/ });
+```
 
 ## Chamada sem transação
-```
-sql.request()
-    .input('Parametro', sql.types.Int, valorParametro)
-    .execute(...);
-
+```js
+await sql.request()
+    .input('parametro_name', sql.types.Int, valorParametro)
+    .execute('procedure_name');
 ```
 
 ## Chamada com transação
-```
+```js
 let transaction = sql.transaction();
 
-transaction.begin(...);
+await sql.request(transaction)
+    .input('parametro_name', sql.types.Int, valorParametro)
+    .execute('procedure_name');
 
-sql.request(transaction)
-    .input('Parametro', sql.types.Int, valorParametro)
-    .execute(...);
+await sql.request(transaction)
+    .input('parametro_name', sql.types.Int, valorParametro)
+    .execute('procedure_name');
 
-sql.request(transaction)
-    .input('Parametro', sql.types.Int, valorParametro)
-    .execute(...);
-
-transaction.rollback(...);
-transaction.commit(...);
+await transaction.rollback();
+await transaction.commit();
 
 ```
 
 ## Recuperar parâmetro output
-```
+```js
 
-sql.request(transaction)
-    .input('Parametro', sql.types.Int, valorParametro)
+let request = sql.request(transaction)
+    .input('parametro_name', sql.types.Int, valorParametro)
     .output('output_param', sql.types.Int)
-    .execute('procedure', (err,data) =>{
-        
-        let out = sql.getOutput(); * Retorna somente o primeiro output
-        or
-        let out = sql.getOutput('nome parâmetro output');
-        
-    });
+
+await request.execute('procedure_name');
+
+request.output(name?: string);
     
 ```

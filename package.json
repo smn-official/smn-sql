@@ -9,6 +9,7 @@
   "author": "Gustavo Maritan <gustavo@smn.com.br>",
   "license": "MIT",
   "dependencies": {
-    "mssql": "3.0.0"
+    "bluebird": "^3.5.1",
+    "mssql": "^4.1.0"
   }
 }
